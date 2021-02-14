@@ -1,6 +1,8 @@
 # laravel
 CODING CHALLENGE POUR GOOW
 
+(Utilisation desktop WINDOWS 10 & UBUNTU)
+
 Mise en place de laravel PC PORTABLE et sur MAC
 
 ******Acheminement du projet******
