@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','TaskController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('task','TaskController@getTask');
+
+Route::post('task','TaskController@postTask');
+
+// Route::get('/', ['as' => 'home', function () {
+//     return view('welcome');
+// }]);
+
+// Route::get('/exit', function () {
+//     return view('exit');
+// });
