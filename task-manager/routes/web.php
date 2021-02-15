@@ -16,9 +16,7 @@ use App\Http\Controllers\TaskController;
 */
 Route::get('/','TaskController@index');
 
-Route::get('task','TaskController@getTask');
-
-Route::post('task','TaskController@postTask');
+Route::post('tasksadd/task','TaskController@postTask');
 
 // Route::get('/', ['as' => 'home', function () {
 //     return view('welcome');

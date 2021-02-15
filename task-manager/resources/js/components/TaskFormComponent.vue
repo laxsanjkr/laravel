@@ -6,7 +6,7 @@
        <h3>Merci de renseigné tous les champs</h3>
         <p id="text" style="color:green; margin-left:100px;"></p>
     </div>
-    <form action="#" class="form newtopic" @submit.prevent="task">
+    <form @submit.prevent="postTask" @keydown="form.onKeydown($event)">
        
         <div class="accsection">
             <div class="topwrap">
@@ -28,7 +28,7 @@
                         <br>
                     </div>
                     <div>
-                        <bold><span>Attribuer une couleur a votre tâche</span></bold>
+                        <b><span>Attribuer une couleur a votre tâche</span></b>
                         <input v-model="form.color" type="color" placeholder="Attribuer une couleur a votre tâche" class="form-control" :class="{ 'is-invalid': form.errors.has('color') }" name="color" required>
                         <has-error :form="form" field="color"></has-error>
                         <br>
@@ -37,39 +37,58 @@
                 <div class="clearfix"></div>
             </div>  
         </div>
-       <button type="submit" class="btn btn-primary">Sign Up</button>
+       <button type="submit" class="btn btn-primary">Crée</button>
     </form>
     </div>
 </div>
 </template>
 
 <script>
-    export default {
-
-        data () {
-            return {
+export default {
+    data () {
+        return {
             form: new Form({
-                title: '',
-                description: '',
-                level: '',
-                color: '',
-              })
-            }
-        },
+            title: '',
+            description: '',
+            level: '',
+            color: 'BLACK',
+            })
+        }
+    },
 
-        methods: {
-
-            register () {
-                this.form.post('/register')
-                    .then(( response ) => { 
-
-                        var attr = document.getElementById("text");
-                        attr.innerHTML = response.data.message;  
-                        
-                        this.form.reset();
-
-                    })
-            },
-        }       
+    methods: {
+        postTask () {
+            this.form.post('tasksadd/task')
+                .then(( response ) => { console.log(response) })
+        }
     }
+}
+    // export default {
+        
+    //     data () {
+    //         return {
+    //         form: new Form({
+    //             title: '',
+    //             description: '',
+    //             level: '',
+    //             color: 'BLACK',
+    //           })
+    //         }
+    //     },
+
+    //     methods: {
+
+    //         register () {
+    //             this.form.post('/register')
+    //                 .then(( response ) => { 
+
+    //                     var attr = document.getElementById("text");
+    //                     attr.innerHTML = response.data.message;  
+                        
+    //                     this.form.reset();
+
+    //                 })
+    //         },
+    //     }       
+    // }
 </script> 
