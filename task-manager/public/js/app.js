@@ -1965,19 +1965,14 @@ __webpack_require__.r(__webpack_exports__);
         title: '',
         description: '',
         level: '',
-        color: ''
+        color: 'BLACK'
       })
     };
   },
   methods: {
-    register: function register() {
-      var _this = this;
-
-      this.form.post('/register').then(function (response) {
-        var attr = document.getElementById("text");
-        attr.innerHTML = response.data.message;
-
-        _this.form.reset();
+    postTask: function postTask() {
+      this.form.post('api/taskadd/').then(function (response) {
+        console.log(response);
       });
     }
   }
@@ -38777,12 +38772,13 @@ var render = function() {
       _c(
         "form",
         {
-          staticClass: "form newtopic",
-          attrs: { action: "#" },
           on: {
             submit: function($event) {
               $event.preventDefault()
-              return _vm.task($event)
+              return _vm.postTask($event)
+            },
+            keydown: function($event) {
+              return _vm.form.onKeydown($event)
             }
           }
         },
@@ -38924,11 +38920,7 @@ var render = function() {
                   _c(
                     "div",
                     [
-                      _c("bold", [
-                        _c("span", [
-                          _vm._v("Attribuer une couleur a votre tâche")
-                        ])
-                      ]),
+                      _vm._m(1),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -38976,7 +38968,7 @@ var render = function() {
           _c(
             "button",
             { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Sign Up")]
+            [_vm._v("Crée")]
           )
         ]
       )
@@ -38997,6 +38989,14 @@ var staticRenderFns = [
         staticStyle: { color: "green", "margin-left": "100px" },
         attrs: { id: "text" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("b", [
+      _c("span", [_vm._v("Attribuer une couleur a votre tâche")])
     ])
   }
 ]

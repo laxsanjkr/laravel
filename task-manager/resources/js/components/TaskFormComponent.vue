@@ -58,37 +58,9 @@ export default {
 
     methods: {
         postTask () {
-            this.form.post('tasksadd/task')
+            this.form.post('api/taskadd/')
                 .then(( response ) => { console.log(response) })
         }
     }
 }
-    // export default {
-        
-    //     data () {
-    //         return {
-    //         form: new Form({
-    //             title: '',
-    //             description: '',
-    //             level: '',
-    //             color: 'BLACK',
-    //           })
-    //         }
-    //     },
-
-    //     methods: {
-
-    //         register () {
-    //             this.form.post('/register')
-    //                 .then(( response ) => { 
-
-    //                     var attr = document.getElementById("text");
-    //                     attr.innerHTML = response.data.message;  
-                        
-    //                     this.form.reset();
-
-    //                 })
-    //         },
-    //     }       
-    // }
 </script> 
