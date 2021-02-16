@@ -28,7 +28,7 @@
                             <router-link to="/tasks" class="nav-link"> Liste des tâches </router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/tasksadd" class="nav-link"> Ajouter une nouvelle tâche </router-link>
+                            <router-link to="/taskAdd" class="nav-link"> Ajouter une nouvelle tâche </router-link>
                         </li>
                     </ul>
                 </div>

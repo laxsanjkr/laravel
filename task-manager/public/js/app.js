@@ -2027,7 +2027,7 @@ var routes = [{
   path: '/tasks',
   component: _components_TaskComponent_vue__WEBPACK_IMPORTED_MODULE_3__.default
 }, {
-  path: '/tasksadd',
+  path: '/taskAdd',
   component: _components_TaskFormComponent_vue__WEBPACK_IMPORTED_MODULE_4__.default
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({

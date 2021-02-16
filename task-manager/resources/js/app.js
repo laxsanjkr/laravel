@@ -32,7 +32,7 @@ const routes = [
         component: Task
     },
     {
-        path:'/tasksadd',
+        path:'/taskAdd',
         component: TaskForm
     }
 ];

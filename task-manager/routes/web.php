@@ -14,7 +14,7 @@ use App\Http\Controllers\TaskController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','TaskController@index');
+Route::get('/home','TaskController@index')->name('home');
 
 // Route::get('/', ['as' => 'home', function () {
 //     return view('welcome');
