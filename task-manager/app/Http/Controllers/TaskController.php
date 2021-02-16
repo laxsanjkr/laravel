@@ -8,8 +8,9 @@ use App\Requests\TaskRequest;
 
 class TaskController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         return view('welcome');
+        //return $request->path();
     }
     
 
@@ -22,6 +23,13 @@ class TaskController extends Controller
         $task->level = $request->input('level');
  
         $task->save();
-        return response()->json($task);
+
+        if($task){
+            return ["reussit lors de l'insertion"];
+        }
+        else{
+            return ["probleme lors de l'insertion"];
+        }
+        //return response()->json($task);
     }
 }
