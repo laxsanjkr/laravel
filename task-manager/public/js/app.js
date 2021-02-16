@@ -1894,9 +1894,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
-    console.log('Component mounted.');
+    console.log('Component mounted LISTE DES TACHES CREE.');
   }
 });
 
@@ -38722,22 +38730,35 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("ul", { staticClass: "list-group" }, [
-        _c("li", { staticClass: "list-group-item" }, [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Tâche n°1")])
+    return _c("div", { staticClass: "container text-center" }, [
+      _c("div", { staticClass: "post" }, [
+        _c("div", { staticClass: "postinfotop" }, [
+          _c("h2", [_vm._v("Liste des tâche en cours")]),
+          _vm._v(" "),
+          _c("p", {
+            staticStyle: { color: "green", "margin-left": "100px" },
+            attrs: { id: "text" }
+          })
         ]),
         _vm._v(" "),
-        _c("li", { staticClass: "list-group-item" }, [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Tâche n°2")])
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "list-group-item" }, [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Tache n°3")])
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "list-group-item" }, [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Tache n°4")])
+        _c("div", { staticClass: "container" }, [
+          _c("ul", { staticClass: "list-group" }, [
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Tâche n°1")])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Tâche n°2")])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Tache n°3")])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Tache n°4")])
+            ])
+          ])
         ])
       ])
     ])
