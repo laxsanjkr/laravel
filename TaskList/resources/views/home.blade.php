@@ -14,6 +14,5 @@
         @endif
         <Dashboard :api-data="{{$api_data}}"></Dashboard>
     </div>
-    
         
 @endsection
