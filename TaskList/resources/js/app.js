@@ -9,8 +9,10 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 
 import VueRouter from 'vue-router';
+
 Vue.use(VueRouter);
 
+Vue.component('Dashboard',require('./components/DashboardComponent.vue').default)
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -23,7 +25,7 @@ Vue.use(VueRouter);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 
-const router = new VueRouter({routes})
+// const router = new VueRouter({routes})
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,5 +35,4 @@ const router = new VueRouter({routes})
 
 const app = new Vue({
     el: '#app',
-    router: router
 });

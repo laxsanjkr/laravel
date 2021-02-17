@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,8 @@ class HomeController extends Controller
     {
         $user = auth()->user();
 
-        return view('home', ['userInfo'=>$user]);
+        // $api_data = collect(Http::get('https://rickandmortyapi.com/api/character/')->json()['results']);
+
+        return view('home', ['api_data'=>$user]);
     }
 }
