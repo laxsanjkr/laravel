@@ -78,10 +78,8 @@
     </br>
     <div id="app">
     <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
+            <div class="col-md-10">
                         @yield('content')
-                </div>
             </div>
         </div>
     <script src="{{ asset('js/app.js') }}"></script>

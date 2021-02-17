@@ -1868,11 +1868,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Dashboard',
   props: {
     apiData: {
-      type: Array,
+      type: Object,
       required: true
     }
   }
@@ -1888,7 +1900,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1898,7 +1911,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
+
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_1__.default);
 Vue.component('Dashboard', __webpack_require__(/*! ./components/DashboardComponent.vue */ "./resources/js/components/DashboardComponent.vue").default);
 /**
  * The following block of code may be used to automatically register your
@@ -1918,7 +1932,8 @@ Vue.component('Dashboard', __webpack_require__(/*! ./components/DashboardCompone
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  router: new vue_router__WEBPACK_IMPORTED_MODULE_1__.default(_routes__WEBPACK_IMPORTED_MODULE_0__.default)
 });
 
 /***/ }),
@@ -1964,6 +1979,30 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/routes.js":
+/*!********************************!*\
+  !*** ./resources/js/routes.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mode: ' history',
+  routes: [{
+    path: '/',
+    component: Home
+  }, {
+    path: '/',
+    component: Home
+  }]
+});
 
 /***/ }),
 
@@ -37382,22 +37421,45 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("ul", [
-      _c("li", [
-        _c("b", [_vm._v("Identifiant : ")]),
-        _vm._v(" " + _vm._s(_vm.apiData.name) + "\n    ")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("b", [_vm._v("Email : ")]),
-        _vm._v(" " + _vm._s(_vm.apiData.email) + "\n    ")
-      ]),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._m(2)
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-10" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [
+              _vm._v("Bienvenu sur le Gestionnaire de tâche de "),
+              _c("b", [_vm._v(" @" + _vm._s(_vm.apiData.name) + " ")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("ul", [
+                _c("li", [
+                  _c("b", [_vm._v("Identifiant : ")]),
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.apiData.name) +
+                      "\n                          "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("b", [_vm._v("Email : ")]),
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.apiData.email) +
+                      "\n                          "
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2)
+              ])
+            ])
+          ])
+        ])
+      ])
     ])
   ])
 }
