@@ -10,9 +10,8 @@ class TaskController extends Controller
     public function index()
     {   
         //Verifie si l'utilisateur et connecté
-        $user = auth()->user();
 
-        $tasks = Task::all()->toArray();
+        $tasks = Item::orderBy('created_at', 'DESC')->get();
         
         return view('tasks', ['tasksList'=>$tasks]);
 
@@ -22,8 +21,10 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $task = new Task([
-            'name' => $request->input('name'),
-            'detail' => $request->input('detail')
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'color' => $request->input('color'),
+            'level' => $request->input('level'),
         ]);
         $task->save();
 
